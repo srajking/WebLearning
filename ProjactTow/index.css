@@ -25,6 +25,10 @@ h1,h2,h3,p {
     margin: 0 auto;
 }
 
+.spacing > * + * {
+    margin-top: var(--spacer, 2rem);
+}
+
 .btn {
     display: inline-block;
     text-decoration: none;
@@ -52,5 +56,22 @@ h1,h2,h3,p {
 }
 
 .section-title {
-    
+
 }
+
+.hero {
+    color: white;
+    text-align: center;
+    padding: 15em 0;
+    background: #222;
+  }
+  
+  @supports (background-blend-mode: multiply) {
+    .hero {
+      background: url(image/shoe-3.png), radial-gradient(#444, #111);
+      background-blend-mode: multiply;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+  }
