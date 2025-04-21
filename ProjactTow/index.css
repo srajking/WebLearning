@@ -35,4 +35,22 @@ h1,h2,h3,p {
     padding: .5em 1.25em;
     background-color: var(--clr-accent, blue);
     border-radius: .25em;
+    transition: transform 250ms ease-in-out, opacity 250ms linear;
+}
+
+.btn:hover, .btn:focus {
+    transform: scale(1.1);
+    opacity: .9;
+}
+
+.primary-title {
+    font-size: 4rem;
+    /* شرح من اليسار القيمة الاصغر وبعدها في اليمين القيمة الاكبر و في الوسط ما بينهما لحجم الخط */
+    font-size: clamp(3rem, calc(5vw + 1rem) , 5.4rem);
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.section-title {
+    
 }
