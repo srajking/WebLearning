@@ -157,8 +157,9 @@ section {
 }
 
 .priduct__title {
-    font-size: 4rem;
-    line-height: 1.1;
+    font-size: clamp(3rem, calc(5vw + 1rem), 5.5rem);
+    text-transform: uppercase;
+    line-height: 1;
     color: #fff;
     text-shadow: 0 0 .2em rgba(0, 0, 0, .2);
 }
@@ -191,10 +192,29 @@ section {
 
     .product {
         text-align: left;
+        margin-bottom: 9em;
     }
 
     .product__image {
         float: right;
         width: 65%;
+        shape-outside: url(image/shoe-1.png);
+        shape-margin: 1em;
+        margin: 0 -5em 0 0;
     }
+
+    .priduct__title {
+        margin: 0;
+    }
+
+    .shoe-white .product__image {
+        shape-outside: url(image/shoe-2.png);
+    }
+    /* لاخذ الصوره الى الصفحة اليسار  */
+    /* .shoe-white .product__image {
+        float: left;
+        shape-outside: url(image/shoe-2.png);
+        margin:  0 0 0 -5em;
+        shape-margin: 2em;
+    } */
 }
