@@ -133,13 +133,13 @@ section {
     z-index: -1;
 }
 
-.feautred__details {
+.featured__details {
     opacity: 0;
     transition: opacity 250ms linear;
 }
 
-.featured__item:hover .feautred__details,
-.featured__item:focus .feautred__details  {
+.featured__item:hover .featured__details,
+.featured__item:focus .featured__details  {
    opacity: 1;
    text-shadow: 0 0 2em rgba(255, 255, 255, 1);
 }
@@ -156,7 +156,7 @@ section {
     margin: -5em 0 0 0;
 }
 
-.priduct__title {
+.product__title {
     font-size: clamp(3rem, calc(5vw + 1rem), 5.5rem);
     text-transform: uppercase;
     line-height: 1;
@@ -203,7 +203,7 @@ section {
         margin: 0 -5em 0 0;
     }
 
-    .priduct__title {
+    .product__title {
         margin: 0;
     }
 
