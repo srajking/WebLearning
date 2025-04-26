@@ -1,27 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>University Website Design</title>
-    <link rel="stylesheet" href="css/index.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/index.css" />
 
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
     <section class="header">
-        <nav>
-            <a href="index.htm"><img src="image/logo.png" alt="Logo"></a>
-            <div class="nav-links">
-                <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">About</a></li>
-                    <li><a href="">Course</a></li>
-                    <li><a href="">Blog</a></li>
-                    <li><a href="">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
+      <nav>
+        <a href="index.htm"><img src="image/logo.png" alt="Logo" /></a>
+        <div class="nav-links" id="navLinks">
+          <i class="fa fa-solid fa-times" onclick="hideMenu()"></i>
+          <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Course</a></li>
+            <li><a href="">Blog</a></li>
+            <li><a href="">Contact</a></li>
+          </ul>
+        </div>
+        <i class="fa fa-solid fa-bars" onclick="showMenu()"></i>
+      </nav>
+      <div class="text-box">
+        <h1>World's Biggest University</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
+          incidunt quidem laborum nisi sapiente eum illo illum mollitia<br />
+          rerum! Facilis eveniet iste quas sit iure aperiam nihil consequuntur
+          quam dolore.
+        </p>
+        <a href="#" class="hero-btn">Visit Us To Know More</a>
+      </div>
     </section>
-    
-</body>
+
+    <!------------- Course ------------->
+
+    <section class="course">
+      <h1>Courses We Offer</h1>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+    </section>
+
+    <!-- ------------ JavaScript for Toggle Menu ----------- -->
+
+    <script>
+      var navLinks = document.getElementById("navLinks");
+
+      function showMenu() {
+        navLinks.style.right = "0";
+        // navLinks.style.display = "block";
+        // navLinks.style.transition = "1s"
+      }
+
+      function hideMenu() {
+        navLinks.style.right = "-100%";
+        // navLinks.style.display = "none";
+        // navLinks.style.transition = "1s"
+      }
+    </script>
+  </body>
 </html>
