@@ -1,0 +1,221 @@
+@charset "UTF-8";
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+:root {
+  --main-color: red;
+}
+
+.contact {
+  padding: 10px;
+  background-color: var(--main-color);
+}
+
+.header {
+  color: green;
+}
+
+.footer {
+  background-color: black;
+}
+
+.copyright {
+  background-color: black;
+}
+
+/*
+في السطر رقم 9 الى السطر رقم 12 
+اذا اردت ان اتجاوز وضع علامة النجمه مع كلمة 
+as 
+اذا يجب ان اذكر اسم الملف قبل ان استدعي اي شيء داخل الملف كما يلي 
+.sidebar {
+    background-color: colors.$main;
+    color: colors.$alt;
+}
+*/
+.sidebar {
+  background-color: orange;
+  color: violet;
+}
+
+@media (max-width:767px) {
+  .sidebar {
+    padding: 20px;
+  }
+}
+.parent {
+  font-weight: bold;
+}
+
+.parent .child {
+  font-size: 20px;
+}
+
+.parent .child .grand-child {
+  font-size: 15px;
+}
+
+.parent {
+  font-weight: bold;
+}
+.parent .child {
+  font-size: 20px;
+}
+.parent .child .grand-child {
+  font-size: 15px;
+}
+
+.parent-one, .parent-two {
+  padding: 20px;
+}
+.parent-one .child, .parent-two .child {
+  padding: 10px;
+}
+
+.parent > .child {
+  font-size: 20px;
+}
+.parent > .test {
+  font-weight: bold;
+}
+
+/*
+    اذا وضعت العلامة على الاب للعناصر فهي سوف 
+    تشمل كل ما يكون داخل الاب اما اذا 
+    وضعتها قبل العنصر المحدد فهي سوف تشمل فقط 
+    العنصر الذي تريد تحديده بشكل طبيعي عن 
+    طريق الاسم او الكلاس او لاي دي وغيرها من طرق الاستهداف
+*/
+.parent > .child {
+  font-size: 20px;
+}
+.parent .test {
+  font-weight: bold;
+}
+.parent + p {
+  font-size: 15px;
+}
+
+.parent > .element-one {
+  font-size: 10px;
+}
+.parent > .element-two {
+  font-size: 20px;
+}
+.parent .notDirict {
+  font-weight: bold;
+}
+
+/*
+    اذا كان للاب اكثر من كلاس لنفس العنصر كيف اصل له 
+    عن طريق الاتي 
+*/
+.box {
+  /*
+      علامة ال 
+      &
+      هي العلامة الخاصة بربط اكثر من كلاس لنفس 
+      العنصر في مكان واحد 
+      يعني ان العنصر يحوي اكثر من كلاس 
+  */
+  /*
+      هنا حسب الاتجاه الخاص بالصفحة 
+      يقوم بتغير الاتحاه الخاص بالاب 
+  */
+}
+.box .title {
+  color: red;
+}
+.box .description {
+  font-family: sans-serif;
+}
+.box.red {
+  background-color: rebeccapurple;
+}
+.box:hover {
+  background-color: green;
+}
+.box:hover .title {
+  color: black;
+}
+:not(.box) {
+  color: red;
+}
+[dir=rtl] .box {
+  direction: rtl;
+}
+
+.box {
+  font-size: 20px;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 10px;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.main-box, .article, .ads {
+  background-color: white;
+  padding: 15px;
+  border: 1px solid #ccc;
+}
+
+.ads {
+  background-color: white;
+  padding: 15px;
+  border: 1px solid #ccc;
+  font-size: 20px;
+  color: red;
+}
+
+.article {
+  background-color: white;
+  padding: 15px;
+  border: 1px solid #ccc;
+  font-size: 22px;
+  color: green;
+}
+
+/*
+    نلاحظ بالاعلى ان هناك تكرار لنفس الخواص اكثر من مره 
+    وهذا امر غير مقبول برمجيا هناك عدة 
+    حلول للامر انا ان نجعها كروب وهذا الامر كان
+    في الستايل القديم الطبيعي الان نحل الامر كما يلي 
+
+*/
+.ads {
+  /*
+      هنا عن كريق كلمة 
+      @extend
+      اقول له اعطيني كل خصائص الي موجوده 
+      بالكلاس الي بعد الكلمة 
+      وضعها هنا في المكان الي استدعيتها به 
+
+  */
+  font-size: 20px;
+  color: red;
+}
+
+.article {
+  font-size: 22px;
+  color: green;
+}
+
+.article, .ads {
+  background-color: red;
+  padding: 10px;
+  color: black;
+}
+
+.ads {
+  font-size: 20px;
+  color: red;
+}
+
+.article {
+  font-size: 22px;
+  color: green;
+}
