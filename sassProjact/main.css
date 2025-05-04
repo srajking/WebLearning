@@ -67,10 +67,12 @@ as
   font-size: 15px;
 }
 
-.parent-one, .parent-two {
+.parent-one,
+.parent-two {
   padding: 20px;
 }
-.parent-one .child, .parent-two .child {
+.parent-one .child,
+.parent-two .child {
   padding: 10px;
 }
 
@@ -114,16 +116,16 @@ as
 */
 .box {
   /*
-      علامة ال 
-      &
-      هي العلامة الخاصة بربط اكثر من كلاس لنفس 
-      العنصر في مكان واحد 
-      يعني ان العنصر يحوي اكثر من كلاس 
-  */
+        علامة ال 
+        &
+        هي العلامة الخاصة بربط اكثر من كلاس لنفس 
+        العنصر في مكان واحد 
+        يعني ان العنصر يحوي اكثر من كلاس 
+    */
   /*
-      هنا حسب الاتجاه الخاص بالصفحة 
-      يقوم بتغير الاتحاه الخاص بالاب 
-  */
+        هنا حسب الاتجاه الخاص بالصفحة 
+        يقوم بتغير الاتحاه الخاص بالاب 
+    */
 }
 .box .title {
   color: red;
@@ -139,9 +141,6 @@ as
 }
 .box:hover .title {
   color: black;
-}
-:not(.box) {
-  color: red;
 }
 [dir=rtl] .box {
   direction: rtl;
@@ -188,13 +187,13 @@ as
 */
 .ads {
   /*
-      هنا عن كريق كلمة 
-      @extend
-      اقول له اعطيني كل خصائص الي موجوده 
-      بالكلاس الي بعد الكلمة 
-      وضعها هنا في المكان الي استدعيتها به 
+        هنا عن كريق كلمة 
+        @extend
+        اقول له اعطيني كل خصائص الي موجوده 
+        بالكلاس الي بعد الكلمة 
+        وضعها هنا في المكان الي استدعيتها به 
 
-  */
+    */
   font-size: 20px;
   color: red;
 }
@@ -204,8 +203,8 @@ as
   color: green;
 }
 
-.article, .ads {
-  background-color: red;
+.arrow-div, .box, .article, .ads {
+  background-color: rgb(240, 161, 161);
   padding: 10px;
   color: black;
 }
@@ -218,4 +217,52 @@ as
 .article {
   font-size: 22px;
   color: green;
+}
+
+/* Control Flow - If And Else */
+.page {
+  /*
+        هنا التحقق من الشرط اذا كان القيمة الخاصة به 
+        لايت سوف يأخذ الخصائص التي تكتب تحتها 
+
+    */
+  background-color: white;
+  color: #444;
+}
+
+.box {
+  border-radius: 6px;
+}
+
+.arrow-div, .ads, .article, .box {
+  background-color: rgb(240, 161, 161);
+  padding: 10px;
+  color: black;
+}
+
+.arrow-div {
+  font-size: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 300px;
+  height: 300px;
+  position: relative;
+  margin: 50px auto;
+}
+.arrow-div::before {
+  content: "";
+  position: absolute;
+  border: 20px solid transparent;
+  top: -40px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  border-bottom-color: red;
 }

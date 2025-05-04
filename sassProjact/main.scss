@@ -1,40 +1,39 @@
 // التعليقات كلها تبع ملف الساس
 
 // Import Global Rules
-// @import هذه الخاصية اهملت نستخدم بدالها التالي لاستدعاء الملفات الخاصة بالساس من مكان اخر 
+// @import هذه الخاصية اهملت نستخدم بدالها التالي لاستدعاء الملفات الخاصة بالساس من مكان اخر
 @use "sass/layout/global0rules";
-
 
 // Import pages
 @use "sass/pages/contact";
 
-// هنا حتى يرى كل شي متعلق بالملفات الاخرى 
+// هنا حتى يرى كل شي متعلق بالملفات الاخرى
 // as *
 // Import color
-@use "sass/variables/colors" as * ;
+@use "sass/variables/colors" as *;
 
 // لعمل متغير في الساس يكون بهذا الشكل
-// في الملف الرئيسي الخاص بالمين 
+// في الملف الرئيسي الخاص بالمين
 // css
-// لا يعرض المتغير يعرض فقط القيم مع الخاصية لانه يقوم بالمعالجة هنا ويحولها الى الملف الخاص بالتنسيق هنا فقط المعالجة 
+// لا يعرض المتغير يعرض فقط القيم مع الخاصية لانه يقوم بالمعالجة هنا ويحولها الى الملف الخاص بالتنسيق هنا فقط المعالجة
 // Global Variable
 $alt_color: green;
 
 .header {
-    color: $alt_color;
+  color: $alt_color;
 }
 
 .footer {
-    // local V
-    // التعريف الداخلي يتفوق على التعريف الخاجي
-    // اذا اردت ان ياخذ القيمة على انها تعريف خارجي يجب ان اضع علامه مثل ما يأتي 
-    $alt_color:black !global;
-    $alt_color: black;
-    background-color: $alt_color;
+  // local V
+  // التعريف الداخلي يتفوق على التعريف الخاجي
+  // اذا اردت ان ياخذ القيمة على انها تعريف خارجي يجب ان اضع علامه مثل ما يأتي
+  $alt_color: black !global;
+  $alt_color: black;
+  background-color: $alt_color;
 }
 
 .copyright {
-    background-color: $alt_color;
+  background-color: $alt_color;
 }
 
 /*
@@ -49,66 +48,65 @@ as
 */
 
 .sidebar {
-    background-color: $main;
-    color: $alt;
+  background-color: $main;
+  color: $alt;
 }
 
 // استخدام اخر للمتغيرات
 $max_mobile: "max-width:767px";
 @media ($max_mobile) {
-    .sidebar {
-        padding: 20px;
-    }
+  .sidebar {
+    padding: 20px;
+  }
 }
 
-
-
 // Nesting & Parent Element
-// الطبيعي في وقت مضى من الستايل نكتب كمايلي 
+// الطبيعي في وقت مضى من الستايل نكتب كمايلي
 .parent {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .parent .child {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 .parent .child .grand-child {
-    font-size: 15px;
+  font-size: 15px;
 }
 
-// الان مع خاصية الساس نكتب التداخل كما يلي 
-// التداخل هنا ممكن ان يتغير ليس فقط بالتسلسل ممكن يكون العنصر داخل الابن بشكل طبيعي داخل الاب ليس شرط ان يكون داخل الابن 
-.parent{ 
-    font-weight: bold;
-    .child {
-        font-size: 20px;
-        .grand-child {
-            font-size: 15px;
-        }
+// الان مع خاصية الساس نكتب التداخل كما يلي
+// التداخل هنا ممكن ان يتغير ليس فقط بالتسلسل ممكن يكون العنصر داخل الابن بشكل طبيعي داخل الاب ليس شرط ان يكون داخل الابن
+.parent {
+  font-weight: bold;
+  .child {
+    font-size: 20px;
+    .grand-child {
+      font-size: 15px;
     }
+  }
 }
 
-// اذا كان هناك جمع بين اكثر من عنصر وتنسيق العناصر داخلها 
-.parent-one , .parent-two {
-    padding: 20px;
-    .child {
-        padding: 10px;
-    }
+// اذا كان هناك جمع بين اكثر من عنصر وتنسيق العناصر داخلها
+.parent-one,
+.parent-two {
+  padding: 20px;
+  .child {
+    padding: 10px;
+  }
 }
 
-// التعامل مع المحددات المباشره في اللغة 
+// التعامل مع المحددات المباشره في اللغة
 // الابن المباشر
 .parent > {
-    .child {
-        font-size: 20px;
-    }
-    .test {
-        font-weight: bold;
-    }
+  .child {
+    font-size: 20px;
+  }
+  .test {
+    font-weight: bold;
+  }
 }
-// اذا كان عنصر ابن مباشر واخر لا 
-// اي سليكتور متقدر استطيع اضافته قبل اسم العنصر او الكلاس وغيرها بشكل طبيعي 
+// اذا كان عنصر ابن مباشر واخر لا
+// اي سليكتور متقدر استطيع اضافته قبل اسم العنصر او الكلاس وغيرها بشكل طبيعي
 /*
     اذا وضعت العلامة على الاب للعناصر فهي سوف 
     تشمل كل ما يكون داخل الاب اما اذا 
@@ -117,119 +115,118 @@ $max_mobile: "max-width:767px";
     طريق الاسم او الكلاس او لاي دي وغيرها من طرق الاستهداف
 */
 .parent {
-    > .child {
-        font-size: 20px;
-    }
-    .test {
-        font-weight: bold;
-    }
-    + p {
-        font-size: 15px;
-    }
+  > .child {
+    font-size: 20px;
+  }
+  .test {
+    font-weight: bold;
+  }
+  + p {
+    font-size: 15px;
+  }
 }
 
 // ممكن يكون الاستهداف على اكثر من عنصر يكون بالطريقه الاتية
 .parent {
-    > {
-        .element-one {
-            font-size: 10px;
-        }
-        .element-two {
-            font-size: 20px;
-        }
+  > {
+    .element-one {
+      font-size: 10px;
     }
+    .element-two {
+      font-size: 20px;
+    }
+  }
 
-    .notDirict {
-        font-weight: bold;
-    }
+  .notDirict {
+    font-weight: bold;
+  }
 }
 
-// التعامل مع الاب 
+// التعامل مع الاب
 /*
     اذا كان للاب اكثر من كلاس لنفس العنصر كيف اصل له 
     عن طريق الاتي 
 */
 
 .box {
-    .title {
-        color: red;
-    }
-    .description {
-        font-family: sans-serif;
-    }
-    /*
+  .title {
+    color: red;
+  }
+  .description {
+    font-family: sans-serif;
+  }
+  /*
         علامة ال 
         &
         هي العلامة الخاصة بربط اكثر من كلاس لنفس 
         العنصر في مكان واحد 
         يعني ان العنصر يحوي اكثر من كلاس 
     */
-    &.red {
-        background-color: rebeccapurple;
-    }
+  &.red {
+    background-color: rebeccapurple;
+  }
 
-    &:hover{
-        background-color: green;
-    }
+  &:hover {
+    background-color: green;
+  }
 
-    &:hover .title {
-        color: black;
-    }
-    // استخدام ال not
-    // الكل عدى عنصر الاب
-    :not(&) {
-        color: red;
-    }
+  &:hover .title {
+    color: black;
+  }
+  // استخدام ال not
+  // الكل عدى عنصر الاب
+  // :not(&) {
+  //     color: red;
+  // }
 
-    // حسب الخاصية
-    /*
+  // حسب الخاصية
+  /*
         هنا حسب الاتجاه الخاص بالصفحة 
         يقوم بتغير الاتحاه الخاص بالاب 
     */
-    [dir=rtl] & {
-        direction: rtl;
-    }
+  [dir="rtl"] & {
+    direction: rtl;
+  }
 }
-
 
 //  Property Declarations And Placeholder
 
 .box {
-    font-size: 20px;
-    // استطيع استخدام اختصار خاصية واكمل تفرعاتها مثل
-    font: {
-        size: 15px;
-        weight: bold;
-    }
-    padding: 10px;
-    // ممكن الاتي 
-    margin: auto {
-        top:10px;
-        bottom: 15px;
-    }
+  font-size: 20px;
+  // استطيع استخدام اختصار خاصية واكمل تفرعاتها مثل
+  font: {
+    size: 15px;
+    weight: bold;
+  }
+  padding: 10px;
+  // ممكن الاتي
+  margin: auto {
+    top: 10px;
+    bottom: 15px;
+  }
 }
 
 // placeholder
 .main-box {
-    background-color: white;
-    padding: 15px;
-    border: 1px solid #ccc;
+  background-color: white;
+  padding: 15px;
+  border: 1px solid #ccc;
 }
 
 .ads {
-    background-color: white;
-    padding: 15px;
-    border: 1px solid #ccc;
-    font-size: 20px;
-    color: red;
+  background-color: white;
+  padding: 15px;
+  border: 1px solid #ccc;
+  font-size: 20px;
+  color: red;
 }
 
 .article {
-    background-color: white;
-    padding: 15px;
-    border: 1px solid #ccc;
-    font-size: 22px;
-    color: green;
+  background-color: white;
+  padding: 15px;
+  border: 1px solid #ccc;
+  font-size: 22px;
+  color: green;
 }
 
 /*
@@ -241,7 +238,7 @@ $max_mobile: "max-width:767px";
 */
 
 .ads {
-    /*
+  /*
         هنا عن كريق كلمة 
         @extend
         اقول له اعطيني كل خصائص الي موجوده 
@@ -249,47 +246,124 @@ $max_mobile: "max-width:767px";
         وضعها هنا في المكان الي استدعيتها به 
 
     */
-    @extend .main-box;
-    font-size: 20px;
-    color: red;
+  @extend .main-box;
+  font-size: 20px;
+  color: red;
 }
 
 .article {
-    @extend .main-box;
-    font-size: 22px;
-    color: green;
+  @extend .main-box;
+  font-size: 22px;
+  color: green;
 }
 
-// الان اذا اردت ان اضع مجموعه خصائص هنا ولكن ليس موجوده في صفحة التصميم استخدم ما يلي 
-//  % علامة 
-// تستخدم لتشير لشيء استخدمه فقط في ملف الستايل 
+// الان اذا اردت ان اضع مجموعه خصائص هنا ولكن ليس موجوده في صفحة التصميم استخدم ما يلي
+//  % علامة
+// تستخدم لتشير لشيء استخدمه فقط في ملف الستايل
 
 %main-box {
-    background-color: red;
-    padding: 10px;
-    color: black;
+  background-color: rgb(240, 161, 161);
+  padding: 10px;
+  color: black;
 }
 // هنا اخذ التنسيقات منه فقط ولا استخدمه في الصفحة الاساسية للتصميم
 
 .ads {
-    @extend %main-box;
-    font-size: 20px;
-    color: red;
+  @extend %main-box;
+  font-size: 20px;
+  color: red;
 }
 
 .article {
-    @extend %main-box;
-    font-size: 22px;
-    color: green;
+  @extend %main-box;
+  font-size: 22px;
+  color: green;
 }
 
+/* Control Flow - If And Else */
 
+$theme: "light";
 
+.page {
+  /*
+        هنا التحقق من الشرط اذا كان القيمة الخاصة به 
+        لايت سوف يأخذ الخصائص التي تكتب تحتها 
 
+    */
+  @if $theme == "light" {
+    background-color: white;
+    color: #444;
+  } @else {
+    background-color: black;
+    color: #fff;
+  }
+}
 
+// استخدام اخر للشرط داخل الخاصية
+$rounded: true; //false or true
 
+.box {
+  @extend %main-box;
+  // border-radius: 6px ;
+  //اذا تحقق الشرط ضع القيمة او ابقها فارغة
+  border-radius: if($rounded, 6px, null);
+}
 
+%main-box {
+  background-color: rgb(240, 161, 161);
+  padding: 10px;
+  color: black;
+}
 
+// عمل فعلي على الصفحة
 
+$direction: "top";
 
+.arrow-div {
+  @extend %main-box;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 300px;
+  position: relative;
+  margin: 50px auto;
+  &::before {
+    content: "";
+    position: absolute;
+    border: 20px solid transparent;
 
+    @if $direction == "top" {
+      top: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      // عندما يكون العنصر بلا ابعاد يعطي قيم للحدود ترسم على شكل مثلثات متقابله
+      border-bottom-color: red;
+    } @else if $direction == "right" {
+      right: -40px;
+      top: 50%;
+      transform: translateY(-50%);
+      // عندما يكون العنصر بلا ابعاد يعطي قيم للحدود ترسم على شكل مثلثات متقابله
+      border-left-color: red;
+    }
+    @else if $direction == "bottom" {
+      bottom: -40px;
+      // right: 50%;
+      // transform: translateX(50%);
+      left: 50%;
+      transform: translateX(-50%);
+      // عندما يكون العنصر بلا ابعاد يعطي قيم للحدود ترسم على شكل مثلثات متقابله
+      border-top-color: red;
+    }
+    @else if $direction == "left" {
+      left: -40px;
+      top: 50%;
+      transform: translateY(-50%);
+      // عندما يكون العنصر بلا ابعاد يعطي قيم للحدود ترسم على شكل مثلثات متقابله
+      border-right-color: red;
+    } @else {
+      @error "This direction #{$direction} is not Valid"
+    }
+  }
+}
