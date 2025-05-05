@@ -346,8 +346,7 @@ $direction: "top";
       transform: translateY(-50%);
       // عندما يكون العنصر بلا ابعاد يعطي قيم للحدود ترسم على شكل مثلثات متقابله
       border-left-color: red;
-    }
-    @else if $direction == "bottom" {
+    } @else if $direction == "bottom" {
       bottom: -40px;
       // right: 50%;
       // transform: translateX(50%);
@@ -355,15 +354,95 @@ $direction: "top";
       transform: translateX(-50%);
       // عندما يكون العنصر بلا ابعاد يعطي قيم للحدود ترسم على شكل مثلثات متقابله
       border-top-color: red;
-    }
-    @else if $direction == "left" {
+    } @else if $direction == "left" {
       left: -40px;
       top: 50%;
       transform: translateY(-50%);
       // عندما يكون العنصر بلا ابعاد يعطي قيم للحدود ترسم على شكل مثلثات متقابله
       border-right-color: red;
     } @else {
-      @error "This direction #{$direction} is not Valid"
+      @error "This direction #{$direction} is not Valid";
     }
+  }
+}
+
+// Loop - For
+
+// باتي بكل الارقام ما عدى رقم 10
+// @for $i from 1 to 10
+
+// ياتي بالكل حتى رقم الاخير
+@for $i from 1 through 10 {
+  .class-#{$i} {
+    // هنا حتى تكون الزيادة ايضا على قيمة الخط وبقية الخصائص نفس الطريقة
+    font-size: #{$i + 10px};
+  }
+}
+
+// مثال اقوى
+$dimensions: 0;
+@for $i from 1 through 10 {
+  .circle-#{100 + $dimensions} {
+    width: $dimensions + 100;
+    height: $dimensions + 100;
+    border-radius: 50%;
+  }
+  // حتى يكون في كل تكرار يقوم بزيادة البعد حسب ما انا اريد
+  $dimensions: $dimensions + 100;
+}
+
+// Loop - Each And Maps
+
+$themes: red, green, blue;
+/*
+  هنا سوف يكون هناك ثلاث تصميمات للالوان التي اعطيتها فوق واذا قمت بزيادة لون معين زيادة سوف يقوم بزيادة الكلاسات بعدد الالوان التي تريدها انت وهكذا يمكن متابعة المعالجة على ملف الستايل الرئيسي
+*/
+@each $theme in $themes {
+  .#{$theme}-theme {
+    .product {
+      background-color: white;
+      border-bottom: 2px solid $theme;
+      .title {
+        color: $theme;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+$socials: (
+  "facebook": blue,
+  "youtube": red,
+  "github": black,
+  "twitter": indianred,
+);
+
+/*
+  هنا لدي مفتاح وقيمة اذا احتاج الى اكثر من متغير واحد 
+*/
+
+@each $name, $color in $socials {
+  // اسم الكلاس يكون على اسم المفتاح الدخل سابقا
+  .#{$name} {
+    background-color: $color;
+    color: white;
+    &::before {
+      content: $name;
+    }
+  }
+}
+
+// البناء والترتيب
+
+$classes: "one" 20px red, "tow" 15px green, "three" 22px blue;
+
+// ترتيب القيم بالترتيب المعطي في الاعلى
+
+@each $class,$font,$color in $classes {
+  .#{$class} {
+    font-size: $font;
+    background-color: $color;
+    color: white;
+    padding: $font / 2;
   }
 }

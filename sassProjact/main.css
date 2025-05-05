@@ -266,3 +266,189 @@ as
           transform: translateX(-50%);
   border-bottom-color: red;
 }
+
+.class-1 {
+  font-size: 11px;
+}
+
+.class-2 {
+  font-size: 12px;
+}
+
+.class-3 {
+  font-size: 13px;
+}
+
+.class-4 {
+  font-size: 14px;
+}
+
+.class-5 {
+  font-size: 15px;
+}
+
+.class-6 {
+  font-size: 16px;
+}
+
+.class-7 {
+  font-size: 17px;
+}
+
+.class-8 {
+  font-size: 18px;
+}
+
+.class-9 {
+  font-size: 19px;
+}
+
+.class-10 {
+  font-size: 20px;
+}
+
+.circle-100 {
+  width: 100;
+  height: 100;
+  border-radius: 50%;
+}
+
+.circle-200 {
+  width: 200;
+  height: 200;
+  border-radius: 50%;
+}
+
+.circle-300 {
+  width: 300;
+  height: 300;
+  border-radius: 50%;
+}
+
+.circle-400 {
+  width: 400;
+  height: 400;
+  border-radius: 50%;
+}
+
+.circle-500 {
+  width: 500;
+  height: 500;
+  border-radius: 50%;
+}
+
+.circle-600 {
+  width: 600;
+  height: 600;
+  border-radius: 50%;
+}
+
+.circle-700 {
+  width: 700;
+  height: 700;
+  border-radius: 50%;
+}
+
+.circle-800 {
+  width: 800;
+  height: 800;
+  border-radius: 50%;
+}
+
+.circle-900 {
+  width: 900;
+  height: 900;
+  border-radius: 50%;
+}
+
+.circle-1000 {
+  width: 1000;
+  height: 1000;
+  border-radius: 50%;
+}
+
+/*
+  هنا سوف يكون هناك ثلاث تصميمات للالوان التي اعطيتها فوق واذا قمت بزيادة لون معين زيادة سوف يقوم بزيادة الكلاسات بعدد الالوان التي تريدها انت وهكذا يمكن متابعة المعالجة على ملف الستايل الرئيسي
+*/
+.red-theme .product {
+  background-color: white;
+  border-bottom: 2px solid red;
+}
+.red-theme .product .title {
+  color: red;
+  font-weight: bold;
+}
+
+.green-theme .product {
+  background-color: white;
+  border-bottom: 2px solid green;
+}
+.green-theme .product .title {
+  color: green;
+  font-weight: bold;
+}
+
+.blue-theme .product {
+  background-color: white;
+  border-bottom: 2px solid blue;
+}
+.blue-theme .product .title {
+  color: blue;
+  font-weight: bold;
+}
+
+/*
+  هنا لدي مفتاح وقيمة اذا احتاج الى اكثر من متغير واحد 
+*/
+.facebook {
+  background-color: blue;
+  color: white;
+}
+.facebook::before {
+  content: "facebook";
+}
+
+.youtube {
+  background-color: red;
+  color: white;
+}
+.youtube::before {
+  content: "youtube";
+}
+
+.github {
+  background-color: black;
+  color: white;
+}
+.github::before {
+  content: "github";
+}
+
+.twitter {
+  background-color: indianred;
+  color: white;
+}
+.twitter::before {
+  content: "twitter";
+}
+
+.one {
+  font-size: 20px;
+  background-color: red;
+  color: white;
+  padding: 10px;
+}
+
+.tow {
+  font-size: 15px;
+  background-color: green;
+  color: white;
+  padding: 7.5px;
+}
+
+.three {
+  font-size: 22px;
+  background-color: blue;
+  color: white;
+  padding: 11px;
+}
