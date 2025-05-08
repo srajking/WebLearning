@@ -1,0 +1,66 @@
+// عمل قسم يغطي كل الموقع اثناء التحميل
+@mixin overlay($color, $opacity) {
+  // الخواص الثابتة
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($color, $opacity);
+}
+
+// الميكس في الانيميشن
+//     هذا العمل يكون الاسم متغير لكن القيم ثابتة
+//     @mixin keyF($anim-name) {
+//     @-webkit-keyframes #{$anim-name} {
+//       from {
+//         opacity: 0;
+//       }
+//       to {
+//         opacity: 1;
+//       }
+//     }
+  
+//     @keyframes #{$anim-name}  {
+//       from {
+//         opacity: 0;
+//       }
+//       to {
+//         opacity: 1;
+//       }
+//     }
+//   }
+  
+@mixin keyF($anim-name) {
+    @-webkit-keyframes #{$anim-name} {
+      @content;
+    }
+  
+    @keyframes #{$anim-name} {
+      @content;
+    }  
+  }
+
+
+  // #18 - Practice Create Media Queries Mixin
+// دمج الميديا مع المكس اكثر من خاصية
+@mixin breakpoints($point) {
+    @if $point == mobile {
+      @media (max-width: 767px) {
+        @content;
+      }
+    } @else if $point == small {
+      @media (min-width: 767px) and (max-width: 991px) {
+        @content;
+      }
+    } @else if $point == medium {
+      @media (min-width: 992px) and (max-width: 1199px) {
+        @content;
+      }
+    } @else if $point == large {
+      @media (min-width: 1200px) {
+        @content;
+      }
+    }
+  }
+  

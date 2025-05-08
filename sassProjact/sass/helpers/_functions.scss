@@ -1,0 +1,33 @@
+// #16 - Function
+
+
+/// Function To Get Element Height
+/// 
+/// @param {size}
+/// Element Width
+/// @return {int}
+/// Return Element Height => Width / 2
+/// 
+@function half($size) {
+    @return $size / 2;
+}
+
+
+
+/*
+  هنا سوف اقوم ببناء دالة لكن بعدد متغيرات غير معروف
+  وسوف يتم شرح التفاصيل هنا .....
+  هذه الدالة تاخذ العدد المرسله من القيم وتقوم بجمعها ةبعدها 
+  تضع القيمة للخاصية المحدده 
+*/
+
+@function calculate($sizes...) {
+    // قيمة العناصر الاوليه 
+    $total: 0;
+    // اسوي لوب على كل العناصر الي راح تصير عندي 
+    @each $size in $sizes {
+      // كل عنصر راح يوصل له يضع القيمة الخاصة به على قيمة المتغير 
+      $total: $total + $size;
+    }
+    @return $total;
+  }

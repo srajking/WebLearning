@@ -13,6 +13,12 @@
   background-color: var(--main-color);
 }
 
+/*
+  هنا سوف اقوم ببناء دالة لكن بعدد متغيرات غير معروف
+  وسوف يتم شرح التفاصيل هنا .....
+  هذه الدالة تاخذ العدد المرسله من القيم وتقوم بجمعها ةبعدها 
+  تضع القيمة للخاصية المحدده 
+*/
 .header {
   color: green;
 }
@@ -451,4 +457,186 @@ as
   background-color: blue;
   color: white;
   padding: 11px;
+}
+
+.width-100 {
+  width: 100px;
+  height: 50;
+}
+
+.width-200 {
+  width: 200px;
+  height: 100;
+}
+
+.width-300 {
+  width: 300px;
+  height: 150;
+}
+
+.width-400 {
+  width: 400px;
+  height: 200;
+}
+
+.width-500 {
+  width: 500px;
+  height: 250;
+}
+
+.width-600 {
+  width: 600px;
+  height: 300;
+}
+
+.width-700 {
+  width: 700px;
+  height: 350;
+}
+
+.width-800 {
+  width: 800px;
+  height: 400;
+}
+
+.width-900 {
+  width: 900px;
+  height: 450;
+}
+
+.width-1000 {
+  width: 1000px;
+  height: 500;
+}
+
+.col-1 {
+  width: 8.3333333333%;
+}
+
+.col-2 {
+  width: 16.6666666667%;
+}
+
+.col-3 {
+  width: 25%;
+}
+
+.col-4 {
+  width: 33.3333333333%;
+}
+
+.col-5 {
+  width: 41.6666666667%;
+}
+
+.col-6 {
+  width: 50%;
+}
+
+.col-7 {
+  width: 58.3333333333%;
+}
+
+.col-8 {
+  width: 66.6666666667%;
+}
+
+.col-9 {
+  width: 75%;
+}
+
+.col-10 {
+  width: 83.3333333333%;
+}
+
+.col-11 {
+  width: 91.6666666667%;
+}
+
+.col-12 {
+  width: 100%;
+}
+
+.element {
+  width: 200px;
+  height: 100px;
+  top: 350px;
+}
+
+.black-orerlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+@-webkit-keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes go-up {
+  from {
+    width: 100;
+  }
+  to {
+    width: 200;
+  }
+}
+@keyframes go-up {
+  from {
+    width: 100;
+  }
+  to {
+    width: 200;
+  }
+}
+@-webkit-keyframes go {
+  from {
+    height: 100;
+  }
+  to {
+    height: 200;
+  }
+}
+@keyframes go {
+  from {
+    height: 100;
+  }
+  to {
+    height: 200;
+  }
+}
+@media (max-width: 767px) {
+  .media {
+    font-size: 15px;
+  }
+}
+@media (min-width: 767px) and (max-width: 991px) {
+  .media {
+    font-size: 20px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .media {
+    font-size: 25px;
+  }
+}
+@media (min-width: 1200px) {
+  .media {
+    font-size: 35px;
+  }
 }

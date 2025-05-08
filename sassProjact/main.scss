@@ -12,6 +12,12 @@
 // Import color
 @use "sass/variables/colors" as *;
 
+// Import Functions
+@use "./sass/helpers/functions" as *;
+
+// Import mixin
+@use "sass/helpers/mixins" as *;
+
 // لعمل متغير في الساس يكون بهذا الشكل
 // في الملف الرئيسي الخاص بالمين
 // css
@@ -438,11 +444,97 @@ $classes: "one" 20px red, "tow" 15px green, "three" 22px blue;
 
 // ترتيب القيم بالترتيب المعطي في الاعلى
 
-@each $class,$font,$color in $classes {
+@each $class, $font, $color in $classes {
   .#{$class} {
     font-size: $font;
     background-color: $color;
     color: white;
     padding: $font / 2;
   }
+}
+
+// Loop - While
+
+$start: 1;
+@while $start <= 10 {
+  .width-#{$start * 100} {
+    width: $start * 100px;
+    height: ($start * 100)/2;
+  }
+
+  $start: $start + 1;
+}
+
+// Create Bootstrap Grid System
+
+$grid_cols: 12;
+
+@for $i from 1 through $grid_cols {
+  .col-#{$i} {
+    width: percentage($i / $grid_cols);
+  }
+}
+
+// #16 - Function
+
+$width: 200px;
+
+.element {
+  width: $width;
+  height: half($width);
+  // القيم المرسله الى الدالة لتدمجه
+  top: calculate(100px, 200px, 50px);
+}
+
+// #17 - Practice Mixin With Content
+
+.black-orerlay {
+  @include overlay(black, 0.5);
+}
+// يكون انشاء المتغيرات من هنا ولكن
+// العمل على انشاء الانيميشن من الملف الخاص بالمكس هناك عن طريق
+// المتغيرات التي تم انشائها وينكن انشاء
+// كل المتغيرات والمكس في ملف واحد
+@include keyF(fade-in) {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@include keyF(go-up) {
+  from {
+    width: 100;
+  }
+  to {
+    width: 200;
+  }
+}
+@include keyF(go) {
+  from {
+    height: 100;
+  }
+  to {
+    height: 200;
+  }
+}
+
+// استخدام مكس الميديا كيوري 18
+// • If Condition • + • Mixin • + • Content
+
+.media {
+  @include breakpoints(mobile) {
+    font-size: 15px;
+  }
+  @include breakpoints(small) {
+    font-size: 20px;
+  }
+  @include breakpoints(medium) {
+    font-size: 25px;
+  }
+  @include breakpoints(large) {
+    font-size: 35px;
+  }
+ 
 }

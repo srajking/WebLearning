@@ -1,0 +1,18 @@
+
+# ✅ الخطوة 1: تحديد ملف Sass الذي نريد تحويله، والمجلد الذي نريد وضع CSS فيه
+# هذا الأمر يحول ملف sass/style.scss إلى css/style.css مرة واحدة فقط
+sass sass/style.scss css/style.css
+
+# 🔁 الخطوة 2: جعل Sass يراقب التعديلات تلقائيًا
+# عند كل حفظ لملف style.scss، يتم تحديث ملف style.css تلقائيًا
+sass --watch sass/style.scss:css/style.css
+
+# 📁 الخطوة 3: تحويل مجلد كامل من ملفات Sass إلى مجلد CSS
+# أي ملف .scss داخل مجلد sass/ يتحول إلى ملف .css بنفس الاسم داخل مجلد css/
+sass --watch sass/:css/
+
+# 📌 ملاحظات إضافية:
+# - تأكد أن لديك Sass مثبتًا، إن لم يكن مثبتًا فاستخدم:
+#   npm install -g sass
+# - نفّذ الأوامر من داخل مجلد المشروع باستخدام VS Code Terminal أو CMD أو Git Bash
+# - لا تنسَ أن مجلد css/ يجب أن يكون موجودًا أو سيُنشأ تلقائيًا عند أول تحويل
