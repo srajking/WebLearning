@@ -1,0 +1,62 @@
+اذا اردت معالجة ملفات الساس بدون اي برامج خارجية 
+يكون عن طريق النود 
+قم بتنزيل نود جي اس 
+nodejs
+
+وبعدها انفذ الامر الخاص بانشاء السكريبت الخاص بالنود في الملف
+npm init -y
+هذا الامر لانشاء الكريبت الخاص 
+{
+  "name": "projactone",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
+
+نقوم بتصحيح ما يلي حسب ما يناسب العمل 
+"test": "echo \"Error: no test specified\" && exit 1"
+test = sass لان العمل ساس 
+"echo \"Error: no test specified\" && exit 1" =
+"sass main.scss css/styles.css" مسار الملف والملف الخارج بعد المعالجة 
+
+يكون كالاتي 
+{
+  "name": "projactone",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass main.scss css/styles.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
+
+
+حتى تكون المعالجة تلقائية بدون تشغيل الكود عند كل تغير 
+نقوم بانشاء سطر اخر داخل السكريبت 
+الاسم يكون اي اسم تريد  
+
+"watch": "sass --watch main.scss css/styles.css"
+
+يكون كالاتي 
+{
+  "name": "projactone",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass main.scss css/styles.css",
+    "watch": "sass -watch main.scss css/styles.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
