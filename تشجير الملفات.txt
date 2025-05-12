@@ -1,0 +1,47 @@
+function Show-Tree {
+    param (
+        [string]$Path = ".",
+        [int]$Level = 0,
+        [string[]]$Exclude = @()
+    )
+
+    $items = Get-ChildItem -LiteralPath $Path | Where-Object {
+        $Exclude -notcontains $_.Name
+    } | Sort-Object -Property PSIsContainer -Descending
+
+    foreach ($item in $items) {
+        $indent = ('│   ' * $Level) + '├── '
+        $line = $indent + $item.Name
+        $line
+        if ($item.PSIsContainer) {
+            Show-Tree -Path $item.FullName -Level ($Level + 1) -Exclude $Exclude
+        }
+    }
+}
+
+# مثال: استثناء مجلد node_modules وملف package-lock.json
+Show-Tree -Exclude "node_modules", "package-lock.json" | Out-File -Encoding utf8 file-structure.txt
+_________________________________________________________________________________________________________
+
+
+#بدون استثناء
+
+function Show-Tree {
+    param (
+        [string]$Path = ".",
+        [int]$Level = 0
+    )
+
+    $items = Get-ChildItem -LiteralPath $Path | Sort-Object -Property PSIsContainer -Descending
+    foreach ($item in $items) {
+        $indent = ('│   ' * $Level) + '├── '
+        $line = $indent + $item.Name
+        $line
+        if ($item.PSIsContainer) {
+            Show-Tree -Path $item.FullName -Level ($Level + 1)
+        }
+    }
+}
+
+Show-Tree | Out-File -Encoding utf8 file-structure.txt
+
