@@ -1,0 +1,45 @@
+﻿├── tech
+│   ├── img-7.png
+│   ├── img-6.jpg
+│   ├── logo-1.png
+│   ├── video.mp4
+│   ├── logo-2.png
+│   ├── img-2.jpg
+│   ├── img-1.png
+│   ├── img-3.jpg
+│   ├── img-5.jpg
+│   ├── img-4.jpg
+├── sass
+│   ├── layout
+│   │   ├── _header.scss
+│   │   ├── _navigation.scss
+│   │   ├── _footer.scss
+│   │   ├── _grid.scss
+│   ├── pages
+│   │   ├── _home.scss
+│   ├── components
+│   │   ├── _form.scss
+│   │   ├── _feature-box.scss
+│   │   ├── _story.scss
+│   │   ├── _popup.scss
+│   │   ├── _button.scss
+│   │   ├── _bg-video.scss
+│   │   ├── _composition.scss
+│   │   ├── _card.scss
+│   ├── abstracts
+│   │   ├── _variables.scss
+│   │   ├── _mixins.scss
+│   │   ├── _functions.scss
+│   ├── base
+│   │   ├── _typography.scss
+│   │   ├── _utilties.scss
+│   │   ├── _animations.scss
+│   │   ├── _base.scss
+│   ├── main.scss
+├── css
+│   ├── styles.css.map
+│   ├── styles.css
+├── package.json
+├── text.txt
+├── file-structure.txt
+├── index.html

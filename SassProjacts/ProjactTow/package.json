@@ -22,6 +22,7 @@
     "postcss-cli": "^9.1.0"
   },
   "devDependencies": {
-    "sass": "^1.88.0"
+    "live-server": "^1.2.2",
+    "sass": "^1.89.0"
   }
 }
