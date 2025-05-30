@@ -207,6 +207,25 @@ body {
   animation-fill-mode: backwards;
 }
 
+.row {
+  max-width: 114rem;
+  margin: 0 auto;
+}
+.row:not(:last-child) {
+  margin-bottom: 8rem;
+}
+@media only screen and (max-width: 56.25em) {
+  .row:not(:last-child) {
+    margin-bottom: 6rem;
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  .row {
+    max-width: 50rem;
+    padding: 0 3rem;
+  }
+}
+
 .header {
   height: 84vh;
   background-image: linear-gradient(to right bottom, #070335, #050872);
