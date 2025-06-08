@@ -56,8 +56,8 @@ body {
   );
   -webkit-background-clip: text;
   color: transparent;
-  letter-spacing: .2rem;
-  transition: all .2s;
+  letter-spacing: 0.2rem;
+  transition: all 0.2s;
 
   @include respond(tab-port) {
     font-size: 3rem;
@@ -69,5 +69,20 @@ body {
 
   &:hover {
     transform: skewY(2deg) skewX(15deg) scale(1.4);
+    text-shadow: 0.5rem 1rem 2dsm rgba($color-black, 1.2);
+  }
+}
+
+.heading-tertiary {
+  font-size: $default-font-size;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.paragraph {
+  font-size: $default-font-size;
+
+  &:not(:last-child) {
+    margin-bottom: 3rem;
   }
 }
